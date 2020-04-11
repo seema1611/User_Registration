@@ -11,7 +11,8 @@ email_Pattern="^[A-Za-z]{3,}([.|+|_|-]?[A-Za-z0-9]+)?[@][A-Za-z0-9]+[.][A-Za-z]{
 mobile_Pattern="^[0-9]{1,3}[ ][0-9]{10}$"
 
 #Pattern for passwords
-first_Password_Pattern="^[A-za-z]{8,}$"				#Rule 1: minmum 8 chacter
+first_Password_Pattern="^[A-za-z]{8,}$"               #Rule 1: minmum 8 chacter
+second_Password_Pattern="^(?=.*[A-Z])[A-Za-z]{8,}$"         #Rule 2: Atleast one uppercase chacter
 
 #Function to check name email and password
 function toCheck() {
@@ -37,4 +38,4 @@ read -p "Enter the mobile number: " mobile_Number
 toCheck $mobile_Number $mobile_Pattern
 
 read -p "Enter the password : " password_Number
-toCheck $password_Number $first_Password_Pattern
+toCheck $password_Number $second_Password_Pattern
