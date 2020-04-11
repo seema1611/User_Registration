@@ -1,7 +1,7 @@
 #! /bin/bash -x
 shopt -s extglob
 
-#Pattern for first name
+#Pattern for first and last name
 name_Pattern=^[A-Z]{1}[a-z]{3,}$
 
 #Function to check pattren for first name
@@ -15,5 +15,8 @@ function toCheck() {
 		echo "Invalid Format"
 	fi
 }
-read -p "Enter the first name:" first_Name
+read -p "Enter the first name: " first_Name
 toCheck $first_Name $name_Pattern
+
+read -p "Enter the last name: " last_Name
+toCheck $last_Name $name_Pattern
